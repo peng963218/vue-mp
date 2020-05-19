@@ -45,7 +45,7 @@
 <style scoped lang="scss">
     .bg-top {
         width: 100%;
-        height: 66px;
+        height: 60px;
         background: #3a8ee6;
         display: flex;
         justify-content: space-between;
@@ -65,7 +65,7 @@
 
             .NavContent {
                 height: 100%;
-                line-height: 66px;
+                line-height: 60px;
 
                 ul {
                     display: flex;

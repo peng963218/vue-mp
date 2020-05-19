@@ -25,7 +25,7 @@ const routes = [
                     title: '首页',
                     icon: 'el-icon-location'
                 },
-                component: () => import('@/views/home/index')
+                component: () => import('@/views/home/home')
             }
         ]
     },

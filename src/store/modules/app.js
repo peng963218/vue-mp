@@ -29,7 +29,7 @@ export const filterRoutes = routes => {
 export default {
     state: {
         MENU_LIST: [],
-        BG_TOP: getSession('SET_BG_TOP')
+        BG_TOP: getSession('SET_BG_TOP') ? getSession('SET_BG_TOP') : []
     },
     getters: {
         MenuList: () => filterRoutes(routes), // state.MENU_LIST

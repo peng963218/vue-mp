@@ -14,6 +14,9 @@
                 <div class="mp_content">
                     <router-view/>
                 </div>
+                <div class="pages_footer">
+                    <PagesFooter/>
+                </div>
             </div>
         </div>
     </div>
@@ -23,6 +26,7 @@
     import bgTop from './components/bg-top'
     import MenuList from './components/menu-list'
     import NavBar from './components/nav-bar'
+    import PagesFooter from './components/Pages-footer'
     import {mapGetters, mapActions} from 'vuex'
 
     export default {
@@ -44,7 +48,8 @@
         components: {
             bgTop,
             MenuList,
-            NavBar
+            NavBar,
+            PagesFooter
         },
         computed: {
             ...mapGetters(['MenuList'])
@@ -72,7 +77,7 @@
 
         .Main-content {
             width: 100%;
-            height: calc(100vh - 66px);
+            height: calc(100vh - 60px);
 
             .menu-left {
                 background-color: #3C3C46;
@@ -81,14 +86,20 @@
             }
 
             .template-right {
+                height: 100%;
                 width: calc(100% - 220px);
                 background-color: #ffffff;
 
                 .nav-bar {
+                    height: 56px;
                 }
 
                 .mp_content {
-                    height: calc(100% - 56px);
+                    /*height: 100vh;*/
+                }
+
+                .pages_footer {
+                    height: 56px;
                 }
 
             }
