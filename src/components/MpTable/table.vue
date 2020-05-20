@@ -1,5 +1,6 @@
 <template>
   <div class="base_table">
+    <slot></slot>
     <el-table
       :data="data"
       highlight-current-row
@@ -50,7 +51,6 @@
         </el-table-column>
       </template>
     </el-table>
-
     <div class="base_table_page" v-if="isPage">
       <el-pagination
         small
@@ -169,10 +169,16 @@
       }
     },
     mounted() {
+      window.onresize = () => {
+        this.$nextTick(() => {
+          if (!this.isPage) return false
+          this.TableMaxHeight = this.$el.offsetHeight - 56
+        })
+      } //监听窗口变化获取TableMaxHeight
       this.$nextTick(() => {
         if (!this.isPage) return false
         this.TableMaxHeight = this.$el.offsetHeight - 56
-      })
+      }) //组件一加载再次获取高度
     },
     destroyed() {
     }
@@ -187,6 +193,9 @@
       height: 56px;
       display: flex;
       align-items: center;
+      padding: 0 24px;
+      background: #F1F1F1;
+      border-top: 1px solid #dddddd;
     }
   }
 </style>
